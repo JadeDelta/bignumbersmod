@@ -61,7 +61,7 @@ You can freely tweak these to fit your preferred difficulty or pacing.
 2. Download the latest release of **BigNumbersMod.zip**.  
 3. Extract the archive into your game’s folder:  
    ```
-   /BepInEx/plugins/
+   Thunderstore Mod Manager/DataFolder/REPO/profiles/%profilename%/BepInEx/plugins/
    ```
 4. Launch the game — the mod loads automatically.  
 5. (Optional) Edit the generated config to customize multipliers.

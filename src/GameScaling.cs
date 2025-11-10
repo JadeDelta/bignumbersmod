@@ -72,9 +72,23 @@ public static class Patch_ValuableObject_DollarValue
         if (levelIndex < 1) levelIndex = 1;
 
         float multiplier = 1f + GameScaling.MultiplierPerLevel.Value * (levelIndex - 1);
-        __instance.dollarValueCurrent = __instance.dollarValueOriginal * multiplier;
 
-        GameScaling.Log.LogInfo("[ValuablePatch] Scaled " + objName + " to " + __instance.dollarValueCurrent + "(original:" + __instance.dollarValueOriginal + ")");
+        // Use reflection since field is internal
+        var fieldOrig = AccessTools.Field(__instance.GetType(), "dollarValueOriginal");
+        var fieldCurr = AccessTools.Field(__instance.GetType(), "dollarValueCurrent");
+
+        if (fieldOrig != null && fieldCurr != null)
+        {
+            float originalValue = (float)fieldOrig.GetValue(__instance);
+            float newValue = originalValue * multiplier;
+            fieldCurr.SetValue(__instance, newValue);
+
+            GameScaling.Log.LogInfo("[ValuablePatch] Scaled " + objName + " to " + newValue + " (original: " + originalValue + ")");
+        }
+        else
+        {
+            GameScaling.Log.LogWarning("[ValuablePatch] Could not find dollarValue fields on " + objName);
+        }
     }
 }
 

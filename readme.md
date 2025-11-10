@@ -18,6 +18,30 @@ All multipliers are editable through the config file — so you can fine-tune yo
 
 ---
 
+## 📁 Folder Structure
+
+BigNumbersMod/
+├── src/
+│ └── GameScaling.cs
+├── refs/
+│ ├── 0Harmony.dll
+│ ├── Assembly-CSharp.dll
+│ ├── BepInEx.dll
+│ ├── mscorlib.dll
+│ ├── netstandard.dll
+│ ├── PhotonUnityNetworking.dll
+│ ├── System.Core.dll
+│ ├── System.dll
+│ ├── UnityEngine.CoreModule.dll
+│ └── UnityEngine.dll
+├── build.bat
+└── README.md
+
+All source code lives in `/src`, with dependencies in `/refs`.  
+Run `build.bat` to compile the plugin.
+
+---
+
 ## ⚙️ Features
 
 - **📈 Item Scaling:**  

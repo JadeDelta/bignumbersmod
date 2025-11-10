@@ -7,8 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-// If you're here, i guess you shouldn't. Yes, the color fade ansi takes more space than the mod itself lmao
-
 [BepInPlugin("com.river.GameScaling", "GameScaling", "1.0.0")]
 public class GameScaling : BaseUnityPlugin
 {
